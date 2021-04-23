@@ -1,11 +1,13 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## petunjuk penggunaan
+1. aktifkan apache dan mysql di xampp
+2. buka localhost/phpmyadmin
+3. buat database dbtes
+4. migrasikan tabel yang ada pada laravel dengan perintah "php artisan migrate"
+5. migrasikan data yang ada pada seeder dengan perintah "php artisan db:seed"
+6. soal yang dikerjakan hanya soal 2 dan 3
+7. sehingga hanya terdapat dua route saja yaitu untuk menu staff dan user yang melakukan operasi crud
+
 
 ## About Laravel
 
