@@ -11,12 +11,20 @@ use App\Staff;
 
 class UsersController extends Controller
 {
-    function index(){
-        $user = Users::all();
-        return view('/user/user', ['user' => $user]);
+    function index(Request $request)
+    {
+        if ($request->session()->has('hakAkses')) {
+            $hakAksesUser = $request->session()->get('hakAkses');
+            $namaStaff = $request->session()->get('nama');
+            $user = Users::all();
+            return view('/user/user', ['user' => $user, 'hakAksesUser' => $hakAksesUser, 'namaStaff'=> $namaStaff]);
+        } else {
+            return redirect('/login');
+        }
     }
 
-    function inputUser(Request $request){
+    function inputUser(Request $request)
+    {
         $this->validate($request, [
             'nikUser' => 'required',
             'hakAkses' => 'required',
@@ -27,22 +35,24 @@ class UsersController extends Controller
             'nikUser' => $request->nikUser,
             'hakAkses' => $request->hakAkses,
             'statusAkun' => $request->statusAkun,
-            
+
         ]);
         return redirect('/user');
     }
 
-    function updateUser($id, Request $request){
+    function updateUser($id, Request $request)
+    {
         $user = Users::all()->find($id);
-         $user->nikUser = $request->nikUser;
+        $user->nikUser = $request->nikUser;
         $user->hakAkses = $request->hakAkses;
-         $user->statusAkun = $request->statusAkun;
+        $user->statusAkun = $request->statusAkun;
         $user->save();
 
         return redirect('/user');
     }
 
-    function deleteUser($id){
+    function deleteUser($id)
+    {
         $user = Users::all()->find($id);
         $user->delete();
 

@@ -3,9 +3,11 @@
 
 @section('content')
 <!-- button add staff -->
+@if($hakAksesUser === "Admin")
 <div class="float-right mt-4 mb-3">
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Staff</button>
 </div>
+@endif
 
 @section('modalAdd')
 <div class="form-group">

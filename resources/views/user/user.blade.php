@@ -1,10 +1,13 @@
 @extends('layout.navbar')
 @extends('user.modalAdd')
 @section('content')
+
 <!-- button add staff -->
+@if($hakAksesUser === "Admin")
 <div class="float-right mt-4 mb-3">
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addUserModal">Add User</button>
 </div>
+@endif
 
 @section('modalAddUser')
 <div class="form-group">

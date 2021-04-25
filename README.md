@@ -5,8 +5,7 @@
 3. buat database dbtes
 4. migrasikan tabel yang ada pada laravel dengan perintah "php artisan migrate"
 5. migrasikan data yang ada pada seeder dengan perintah "php artisan db:seed"
-6. soal yang dikerjakan hanya soal 2 dan 3
-7. sehingga hanya terdapat dua route saja yaitu untuk menu staff dan user yang melakukan operasi crud
+6. kemudian jalankan "php artisan serve"
 
 
 ## About Laravel

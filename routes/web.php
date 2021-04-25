@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/login', 'LoginController@index');
+
 Route::get('/', 'StaffController@index');
 
 Route::get('/user', 'UsersController@index');
@@ -20,6 +22,10 @@ Route::get('/user', 'UsersController@index');
 Route::get('/deletestaff/{id}', 'StaffController@deleteStaff');
 
 Route::get('/deleteuser/{id}', 'UsersController@deleteUser');
+
+Route::get('/logout', 'LogoutController@index');
+
+Route::post('/login', 'LoginController@login');
 
 Route::post('/inputstaff', 'StaffController@inputStaff');
 

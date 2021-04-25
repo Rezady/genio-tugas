@@ -4,18 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App;
 use App\Staff;
+use App\Users;
 
 
 
 class StaffController extends Controller
 {
 
-    function index()
+    function index(Request $request)
     {
-        $staff = Staff::all();
-        return view('/staff/staff', ['staff' => $staff]);
+        if($request->session()->has('nama')){
+			$hakAksesUser = $request->session()->get('hakAkses');
+            $namaStaff = $request->session()->get('nama');
+            $staff = Staff::all();
+            return view('/staff/staff', ['staff' => $staff, 'hakAksesUser' => $hakAksesUser, 'namaStaff' => $namaStaff]);
+
+		}else{
+			return redirect('/login');
+		}
+       
     }
 
     function inputStaff(Request $request)

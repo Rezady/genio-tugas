@@ -11,7 +11,7 @@ class Staff extends Authenticatable
 {
     use Notifiable;
 
-
+    protected $table="staff";
     /**
      * The attributes that are mass assignable.
      *
