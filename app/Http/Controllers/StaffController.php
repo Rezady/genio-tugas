@@ -16,15 +16,11 @@ class StaffController extends Controller
 
     function index(Request $request)
     {
-        if($request->session()->has('nama')){
+        
 			$hakAksesUser = $request->session()->get('hakAkses');
             $namaStaff = $request->session()->get('nama');
             $staff = Staff::all();
             return view('/staff/staff', ['staff' => $staff, 'hakAksesUser' => $hakAksesUser, 'namaStaff' => $namaStaff]);
-
-		}else{
-			return redirect('/login');
-		}
        
     }
 

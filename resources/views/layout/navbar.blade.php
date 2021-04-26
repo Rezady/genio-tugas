@@ -29,13 +29,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 float-right">
+                <ul class="navbar-nav mb-2 mb-lg-0 mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Staff</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/user">User</a>
                     </li>
+
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{$namaStaff}}

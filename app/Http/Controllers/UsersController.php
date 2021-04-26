@@ -13,14 +13,10 @@ class UsersController extends Controller
 {
     function index(Request $request)
     {
-        if ($request->session()->has('hakAkses')) {
-            $hakAksesUser = $request->session()->get('hakAkses');
-            $namaStaff = $request->session()->get('nama');
-            $user = Users::all();
-            return view('/user/user', ['user' => $user, 'hakAksesUser' => $hakAksesUser, 'namaStaff'=> $namaStaff]);
-        } else {
-            return redirect('/login');
-        }
+        $hakAksesUser = $request->session()->get('hakAkses');
+        $namaStaff = $request->session()->get('nama');
+        $user = Users::all();
+        return view('/user/user', ['user' => $user, 'hakAksesUser' => $hakAksesUser, 'namaStaff' => $namaStaff]);
     }
 
     function inputUser(Request $request)

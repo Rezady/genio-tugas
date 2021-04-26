@@ -13,18 +13,10 @@
                 <!-- form input -->
                 <form method="post" action="/inputstaff">
                     {{ csrf_field() }}
-                    @yield('modalAdd')
-                    <!-- <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div> -->
+                    @yield('modalAdd')                    
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-            </div>
-            <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div> -->
+            </div>            
         </div>
     </div>
 </div>

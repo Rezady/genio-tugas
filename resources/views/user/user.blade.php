@@ -3,11 +3,11 @@
 @section('content')
 
 <!-- button add staff -->
-@if($hakAksesUser === "Admin")
+
 <div class="float-right mt-4 mb-3">
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addUserModal">Add User</button>
 </div>
-@endif
+
 
 @section('modalAddUser')
 <div class="form-group">
@@ -21,7 +21,7 @@
 <div class="form-group">
     <label for="addUserStatusAkun">Status Akun</label>
     <input type="text" class="form-control" id="addUserStatusAkun" aria-describedby="statusAkun" name="statusAkun">
-    
+
 </div>
 
 @endsection
@@ -30,11 +30,16 @@
 <table class="table mt-4">
     <thead>
         <tr>
+
             <th scope="col">NIK</th>
             <th scope="col">Hak Akses</th>
             <th scope="col">Status Akun</th>
             <th scope="col">Update</th>
+
+            @if($hakAksesUser === "Admin")
             <th scope="col">Delete</th>
+            @endif
+
         </tr>
     </thead>
     <tbody>
@@ -44,7 +49,10 @@
             <td>{{$user_el->hakAkses}}</td>
             <td>{{$user_el->statusAkun}}</td>
             <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#UserUpdateModal{{$loop->index}}">Update</button></td>
+
+            @if($hakAksesUser === "Admin")
             <td><a class="btn btn-danger" href="/deleteuser/{{$user_el->id}}" role="button">Delete</a></td>
+            @endif
 
             <!-- Modal Update -->
             <div class="modal fade" id="userUpdateModal{{$loop->index}}" tabindex="-1" aria-labelledby="userUpdateModalLabel" aria-hidden="true">
@@ -68,7 +76,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="userUpdateHA{{$loop->index}}">Hak Akses</label>
-                                    <input type="text" class="form-control" id="userUpdateHA{{$loop->index}}" name="hakAkses">
+                                    <input type="text" class="form-control" id="userUpdateHA{{$loop->index}}" name="hakAkses">                                   
                                 </div>
                                 <div class="form-group">
                                     <label for="userUpdateSA{{$loop->index}}">Status Akun</label>
@@ -78,10 +86,7 @@
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
-                        <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div> -->
+                       
                     </div>
                 </div>
             </div>

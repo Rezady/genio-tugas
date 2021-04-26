@@ -17,25 +17,30 @@ class LoginController extends Controller
     }
 
     function login(Request $request)
-    {
+    {        
         $page = '/login';
-        // $this->validate($request, [
-        //     'email' => 'required',
-        //     'password' => 'required',
-        // ]);
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
         $emailRequest = $request->email;
         $passwordRequest = $request->password;
         $emailDb = DB::table('staff')->where('email', $emailRequest);
-
+        
+        // mengecek apakah input email berada di database
         if ($emailDb->value('email')) {
             $user = DB::table('users')->where('nikUser', $emailDb->value('nik'));
+            
+            // status akun yang tidak aktif tidak boleh login
             if ($user->value('statusAkun') === "Aktif" && ($user->value('hakAkses') === "Admin" || $user->value('hakAkses') === "User")) {
-
                 $passwordDb = DB::table('staff')->where('id', "{$emailDb->value('id')}")->value('password');
+
                 if ($passwordDb === $passwordRequest) {
                     $page = '/';
-                    $request->session()->put('nama',$emailDb->value('nama'));
+                    $request->session()->put('nama', $emailDb->value('nama'));
                     $request->session()->put('hakAkses', $user->value('hakAkses'));
+                    
                 }
             }
         }

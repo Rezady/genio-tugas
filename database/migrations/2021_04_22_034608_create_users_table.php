@@ -18,7 +18,9 @@ class CreateUsersTable extends Migration
             $table->char('nikUser',5);
             $table->string('hakAkses', 20)->nullable();
             $table->string('statusAkun', 20);
+            $table->foreign('nikUser')->references('nik')->on('staff')->onDelete('cascade');
             $table->timestamps();
+            
         });
     }
 

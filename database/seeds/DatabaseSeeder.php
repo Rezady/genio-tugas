@@ -57,27 +57,22 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('users')->insert(
             [
-
                 'nikUser' => 20001,
                 'hakAkses' => 'Admin',
                 'statusAkun' => 'Aktif',
-
             ]
         );
 
         DB::table('users')->insert(
             [
-
                 'nikUser' => 20002,
                 'hakAkses' => 'User',
                 'statusAkun' => 'Aktif',
-
             ]
         );
 
         DB::table('users')->insert(
             [
-
                 'nikUser' => 20003,
                 'hakAkses' => 'Admin',
                 'statusAkun' => 'Tidak Aktif',
@@ -87,11 +82,9 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert(
             [
-
                 'nikUser' => 20004,
                 'hakAkses' => '',
                 'statusAkun' => 'Aktif',
-
             ]
         );
     }

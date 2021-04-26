@@ -3,11 +3,10 @@
 
 @section('content')
 <!-- button add staff -->
-@if($hakAksesUser === "Admin")
+
 <div class="float-right mt-4 mb-3">
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Staff</button>
 </div>
-@endif
 
 @section('modalAdd')
 <div class="form-group">
@@ -42,7 +41,9 @@
             <th scope="col">Email</th>
             <th scope="col">Telepon</th>
             <th scope="col">Update</th>
+            @if($hakAksesUser === "Admin")
             <th scope="col">Delete</th>
+            @endif
         </tr>
     </thead>
     <tbody>
@@ -53,7 +54,9 @@
             <td>{{$staff_el->email}}</td>
             <td>{{$staff_el->telepon}}</td>
             <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal{{$loop->index}}">Update</button></td>
+            @if($hakAksesUser === "Admin")
             <td><a class="btn btn-danger" href="/deletestaff/{{$staff_el->id}}" role="button">Delete</a></td>
+            @endif
 
             <!-- Modal Update -->
             <div class="modal fade" id="updateModal{{$loop->index}}" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
@@ -92,17 +95,11 @@
                                     <label for="updatePassword{{$loop->index}}">Password</label>
                                     <input type="password" class="form-control" id="updatePassword{{$loop->index}}" name="password">
                                 </div>
-                                <!-- <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div> -->
+
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
-                        <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div> -->
+
                     </div>
                 </div>
             </div>
