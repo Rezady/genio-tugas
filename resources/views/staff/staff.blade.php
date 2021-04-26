@@ -11,11 +11,11 @@
 @section('modalAdd')
 <div class="form-group">
     <label for="exampleInputPassword1">NIK</label>
-    <input type="text" class="form-control" id="exampleInputNik" name="nik">
+    <input type="text" class="form-control" id="exampleInputNik" name="nik" maxlength="5">
 </div>
 <div class="form-group">
     <label for="exampleInputPassword1">Nama</label>
-    <input type="ptext" class="form-control" id="exampleInputNama" name="nama">
+    <input type="ptext" class="form-control" id="exampleInputNama" name="nama" >
 </div>
 <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -76,7 +76,7 @@
 
                                 <div class="form-group">
                                     <label for="updateNik{{$loop->index}}">NIK</label>
-                                    <input type="text" class="form-control" id="updateNik{{$loop->index}}" name="nik">
+                                    <input type="text" class="form-control" id="updateNik{{$loop->index}}" name="nik" maxlength="5">
                                 </div>
                                 <div class="form-group">
                                     <label for="updateNama{{$loop->index}}">Nama</label>

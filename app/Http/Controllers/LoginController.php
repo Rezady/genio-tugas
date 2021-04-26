@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+// use App\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App;
-use App\Staff;
+ use App\Staff;
 
 
 class LoginController extends Controller

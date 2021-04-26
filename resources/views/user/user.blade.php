@@ -12,7 +12,7 @@
 @section('modalAddUser')
 <div class="form-group">
     <label for="addUserNikUser">NIK</label>
-    <input type="text" class="form-control" id="addUserInputNikUser" name="nikUser">
+    <input type="text" class="form-control" id="addUserInputNikUser" name="nikUser" maxlength="5">
 </div>
 <div class="form-group">
     <label for="addUserHakAkses">Hak Akses</label>
@@ -72,7 +72,7 @@
 
                                 <div class="form-group">
                                     <label for="userUpdateNik{{$loop->index}}">NIK</label>
-                                    <input type="text" class="form-control" id="userUpdateNik{{$loop->index}}" name="nikUser">
+                                    <input type="text" class="form-control" id="userUpdateNik{{$loop->index}}" name="nikUser" maxlength="5">
                                 </div>
                                 <div class="form-group">
                                     <label for="userUpdateHA{{$loop->index}}">Hak Akses</label>

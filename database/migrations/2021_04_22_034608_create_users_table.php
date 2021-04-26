@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->char('nikUser',5);
+            $table->integer('nikUser');
             $table->string('hakAkses', 20)->nullable();
             $table->string('statusAkun', 20);
             $table->foreign('nikUser')->references('nik')->on('staff')->onDelete('cascade');
